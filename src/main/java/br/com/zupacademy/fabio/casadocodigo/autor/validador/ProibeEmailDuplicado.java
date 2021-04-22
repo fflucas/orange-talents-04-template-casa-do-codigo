@@ -1,4 +1,4 @@
-package br.com.zupacademy.fabio.casadocodigo.validador;
+package br.com.zupacademy.fabio.casadocodigo.autor.validador;
 
 import br.com.zupacademy.fabio.casadocodigo.autor.DtoAutor;
 import br.com.zupacademy.fabio.casadocodigo.autor.ModeloAutor;
