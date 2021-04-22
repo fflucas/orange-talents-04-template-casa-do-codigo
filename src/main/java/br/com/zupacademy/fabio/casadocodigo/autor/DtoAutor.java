@@ -16,6 +16,10 @@ public class DtoAutor {
         this.descricao = descricao;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public ModeloAutor converteParaAutor(){
         return new ModeloAutor(this.nome, this.email, this.descricao);
     }
