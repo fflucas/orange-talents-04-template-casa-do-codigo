@@ -1,11 +1,13 @@
 package br.com.zupacademy.fabio.casadocodigo.autor;
 
+import br.com.zupacademy.fabio.casadocodigo.validador.IsUnique;
+
 import javax.validation.constraints.*;
 
 public class DtoAutor {
     @NotNull @NotBlank
     private String nome;
-    @Email @NotBlank @NotNull
+    @Email @NotBlank @NotNull @IsUnique(domainClass = ModeloAutor.class, fieldName = "email")
     private String email;
     @NotNull @NotBlank @Size(max=400)
     private String descricao;

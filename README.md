@@ -40,7 +40,8 @@ O projeto Casa do Código é o primeiro desafio do Zup Academy.
 
 ## :sparkles: Funcionalidades
 
-:heavy_check_mark: Cadastro de autor.
+:heavy_check_mark: Cadastro de autor;\
+:heavy_check_mark: Cadastro de categoria.
 
 ## :rocket: Tecnologias
 
