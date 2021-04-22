@@ -1,8 +1,11 @@
 package br.com.zupacademy.fabio.casadocodigo.autor;
 
+import br.com.zupacademy.fabio.casadocodigo.validador.ProibeEmailDuplicado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +18,16 @@ import java.time.LocalDateTime;
 public class ControladorAutor {
 
     private RepositorioAutor repositorioAutor;
-
+    private ProibeEmailDuplicado proibeEmailDuplicado;
     @Autowired
-    public ControladorAutor(RepositorioAutor repositorioAutor) {
+    public ControladorAutor(RepositorioAutor repositorioAutor, ProibeEmailDuplicado proibeEmailDuplicado) {
         this.repositorioAutor = repositorioAutor;
+        this.proibeEmailDuplicado = proibeEmailDuplicado;
+    }
+
+    @InitBinder
+    private void initBinder(WebDataBinder binder){
+        binder.addValidators(this.proibeEmailDuplicado);
     }
 
     @PostMapping
