@@ -1,6 +1,5 @@
 package br.com.zupacademy.fabio.casadocodigo.autor;
 
-import br.com.zupacademy.fabio.casadocodigo.autor.validador.ProibeEmailDuplicado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,11 +14,9 @@ import javax.validation.Valid;
 public class ControladorAutor {
 
     private RepositorioAutor repositorioAutor;
-    private ProibeEmailDuplicado proibeEmailDuplicado;
     @Autowired
-    public ControladorAutor(RepositorioAutor repositorioAutor, ProibeEmailDuplicado proibeEmailDuplicado) {
+    public ControladorAutor(RepositorioAutor repositorioAutor) {
         this.repositorioAutor = repositorioAutor;
-        this.proibeEmailDuplicado = proibeEmailDuplicado;
     }
 
     @PostMapping

@@ -1,6 +1,5 @@
 package br.com.zupacademy.fabio.casadocodigo.categoria;
 
-import br.com.zupacademy.fabio.casadocodigo.categoria.validador.ProibeNomeDuplicado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,12 +14,10 @@ import javax.validation.Valid;
 public class ControladorCategoria {
 
     private RepositorioCategoria repositorioCategoria;
-    private ProibeNomeDuplicado proibeNomeDuplicado;
 
     @Autowired
-    public ControladorCategoria(RepositorioCategoria repositorioCategoria, ProibeNomeDuplicado proibeNomeDuplicado) {
+    public ControladorCategoria(RepositorioCategoria repositorioCategoria) {
         this.repositorioCategoria = repositorioCategoria;
-        this.proibeNomeDuplicado = proibeNomeDuplicado;
     }
 
     @PostMapping
