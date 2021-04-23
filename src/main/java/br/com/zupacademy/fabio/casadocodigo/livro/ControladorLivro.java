@@ -33,4 +33,14 @@ public class ControladorLivro {
     public List listAll(){
         return entityManager.createNativeQuery("SELECT l.id, l.titulo FROM livro l").getResultList();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> listOne(@PathVariable Long id){
+        ModeloLivro modeloLivro = entityManager.find(ModeloLivro.class, id);
+        if(modeloLivro == null){
+            return ResponseEntity.notFound().build();
+        }
+        DetalhaLivro livro = new DetalhaLivro(modeloLivro);
+        return ResponseEntity.ok(livro);
+    }
 }
