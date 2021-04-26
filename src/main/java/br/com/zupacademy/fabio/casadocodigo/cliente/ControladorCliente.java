@@ -1,4 +1,4 @@
-package br.com.zupacademy.fabio.casadocodigo.livro.pais;
+package br.com.zupacademy.fabio.casadocodigo.cliente;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,22 +13,21 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/pais")
-public class ControladorPais {
+@RequestMapping("/cliente")
+public class ControladorCliente {
 
     @PersistenceContext
     private EntityManager entityManager;
     @Autowired
-    public ControladorPais(EntityManager entityManager) {
+    public ControladorCliente(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     @PostMapping
     @Transactional
-    public ResponseEntity<ModeloPais> create(@RequestBody @Valid DtoPais dtoPais){
-        ModeloPais pais = dtoPais.converteParaPais();
-        entityManager.persist(pais);
-        return ResponseEntity.ok(pais);
+    public ResponseEntity<ModeloCliente> create(@RequestBody @Valid DtoCliente dtoCliente){
+        ModeloCliente cliente = dtoCliente.converteParaCliente(entityManager);
+        entityManager.persist(cliente);
+        return ResponseEntity.ok(cliente);
     }
-
 }

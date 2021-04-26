@@ -1,4 +1,4 @@
-package br.com.zupacademy.fabio.casadocodigo.livro.pais;
+package br.com.zupacademy.fabio.casadocodigo.pais;
 
 import javax.persistence.*;
 

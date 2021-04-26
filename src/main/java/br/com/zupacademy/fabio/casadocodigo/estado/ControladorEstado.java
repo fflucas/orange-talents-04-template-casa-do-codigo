@@ -1,4 +1,4 @@
-package br.com.zupacademy.fabio.casadocodigo.livro.estado;
+package br.com.zupacademy.fabio.casadocodigo.estado;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
