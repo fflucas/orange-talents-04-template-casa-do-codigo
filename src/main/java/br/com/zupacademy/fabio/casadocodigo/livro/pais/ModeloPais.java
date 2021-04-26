@@ -1,20 +1,20 @@
-package br.com.zupacademy.fabio.casadocodigo.categoria;
+package br.com.zupacademy.fabio.casadocodigo.livro.pais;
 
 import javax.persistence.*;
 
-@Entity(name = "categoria")
-public class ModeloCategoria {
+@Entity(name = "pais")
+public class ModeloPais {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, unique = true)
+    @Column(unique = true, nullable = false)
     private String nome;
 
     @Deprecated
-    public ModeloCategoria() {
+    public ModeloPais() {
     }
 
-    public ModeloCategoria(String nome) {
+    public ModeloPais(String nome) {
         this.nome = nome;
     }
 

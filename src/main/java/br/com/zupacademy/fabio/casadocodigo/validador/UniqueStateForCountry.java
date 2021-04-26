@@ -5,13 +5,14 @@ import javax.validation.Payload;
 import java.lang.annotation.*;
 
 @Documented
-@Constraint(validatedBy = IsUniqueValidator.class)
-@Target({ElementType.FIELD})
+@Constraint(validatedBy = UniqueStateForCountryValidator.class)
+@Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface IsUnique {
-    String message() default "Value field must be unique";
+public @interface UniqueStateForCountry {
+    String message() default "State must be unique for country";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
-    String fieldName();
+    String columnState();
+    String columnCountry();
     Class<?> domainClass();
 }
