@@ -1,6 +1,6 @@
-package br.com.zupacademy.fabio.casadocodigo.livro.estado;
+package br.com.zupacademy.fabio.casadocodigo.estado;
 
-import br.com.zupacademy.fabio.casadocodigo.livro.pais.ModeloPais;
+import br.com.zupacademy.fabio.casadocodigo.pais.ModeloPais;
 
 import javax.persistence.*;
 

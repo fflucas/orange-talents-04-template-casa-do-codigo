@@ -1,6 +1,6 @@
 package br.com.zupacademy.fabio.casadocodigo.validador;
 
-import br.com.zupacademy.fabio.casadocodigo.livro.estado.DtoEstado;
+import br.com.zupacademy.fabio.casadocodigo.estado.DtoEstado;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
